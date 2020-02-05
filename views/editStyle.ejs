@@ -1,0 +1,76 @@
+<%- include('_layouts/head') -%>
+    <link rel="stylesheet" href="/css/contact.css">
+    <link rel="stylesheet" href="/css/classes.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/newStyle.css">
+
+    <body>
+        <%- include('_layouts/header') -%>
+            <section id="page">
+                <main class="wrapper">
+                    <%- include('_layouts/asideLeft') -%>
+                        <section class="articles">
+                            <% if(typeof msg != 'undefined') {%>
+                                <p class="msg">
+                                    <%= msg %>
+                                </p>
+                                <%}%>
+                                    <table>
+                                        <tr>
+                                            <thead>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+                                            </thead>
+                                        </tr>
+                                        <tr>
+                                            <form action="/editStyle/<%= editStyle._id%>" enctype="multipart/form-data" method="POST">
+                                                <td>
+                                                    <div class="input-group">
+                                                        <input value="<%= editStyle.name%>" type="text" name="name" placeholder="New Style">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <textarea name="<%= editStyle.description%>" placeholder="Enter the description" id="description" cols="50" rows="1"></textarea>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <button class="submit" type="submit"><i class="far fa-save"></i></button>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <button class="reset" type="reset"><i class="far fa-window-close"></i></button>
+                                                    </div>
+                                                </td>
+                                            </form>
+                                        </tr>
+                                        <% if(typeof styles != 'undefined') {
+                                   styles.forEach(style=>{
+                                    %>
+                                            <tr>
+                                                <td>
+                                                    <%= style.name%>
+                                                </td>
+                                                <td>
+                                                    <%= style.description%>
+                                                </td>
+                                                <td>
+                                                    <a href="/editStyle/<%=style._id%>"><i class="fas fa-pen"></i></a>
+                                                </td>
+                                                <td>
+                                                    <a href="/deleteStyle/<%=style._id%>"><i class="fas fa-trash-alt"></i></a>
+                                                </td>
+                                            </tr>
+
+                                            <% })}%>
+                                    </table>
+                        </section>
+                        <%- include('_layouts/asideRight') -%>
+                </main>
+            </section>
+    </body>
+    <%- include('_layouts/footer') -%>

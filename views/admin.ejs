@@ -1,0 +1,48 @@
+<%- include('_layouts/head') -%>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/classes.css">
+
+    <body>
+        <%- include('_layouts/header') -%>
+            <section id="page">
+                <main class="wrapper">
+                    <%- include('_layouts/asideLeft') -%>
+                        <section class="articles">
+                            <table>
+                                <tr>
+                                    <thead>
+                                        <th>Title</th>
+                                        <th>Type</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </thead>
+                                </tr>
+                                <% if(typeof posts != 'undefined') {
+                                   posts.forEach(post=>{
+                                    %>
+                                    <tr>
+                                        <td>
+                                            <a href="/singlePost/<%=post._id%>">
+                                                <%= post.title%>
+                                            </a>
+
+                                        </td>
+                                        <td>
+                                            <%= post.type%>
+                                        </td>
+                                        <td>
+                                            <a href="/editPost/<%=post._id%>"><i class="fas fa-pen"></i></a>
+                                        </td>
+                                        <td>
+                                            <a href="/delete/<%=post._id%>"><i class="fas fa-trash-alt"></i></a>
+                                        </td>
+                                    </tr>
+
+                                    <% })}%>
+                            </table>
+                        </section>
+                        <%- include('_layouts/asideRight') -%>
+                </main>
+            </section>
+    </body>
+    <%- include('_layouts/footer') -%>

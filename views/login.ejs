@@ -1,0 +1,32 @@
+<%- include('_layouts/head') -%>
+    <link rel="stylesheet" href="css/contact.css">
+
+    <body>
+        <%- include('_layouts/header') -%>
+            <section id="page">
+                <main class="wrapper">
+                    <%- include('_layouts/asideLeft') -%>
+                        <section class="articles">
+                            <form action="/login" enctype="multipart/form-data" method="POST">
+                                <div class="form-box">
+                                    <div class="group">
+                                        <div class="input-group">
+                                            <label for="username">Username</label>
+                                            <input type="text" name="username">
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="password">Password</label>
+                                            <input type="password" name="password">
+                                        </div>
+                                        <div class="input-group">
+                                            <button class="submit" type="submit">Log in</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </section>
+                        <%- include('_layouts/asideRight') -%>
+                </main>
+            </section>
+    </body>
+    <%- include('_layouts/footer') -%>

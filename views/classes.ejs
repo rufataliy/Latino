@@ -1,0 +1,66 @@
+<%- include('_layouts/head') -%>
+    <link rel="stylesheet" href="/css/classes.css">
+
+    <body>
+        <%- include('_layouts/header') -%>
+            <section id="page">
+                <main class="wrapper">
+                    <%- include('_layouts/asideLeft') -%>
+                        <section class="articles">
+                            <table>
+                                <tr>
+                                    <thead>
+                                        <th class="blankCell" rowspan="2" colspan="2"></th>
+                                        <th colspan="7">Days</th>
+                                    </thead>
+                                </tr>
+                                <tr>
+                                    <thead>
+                                        <th class="blankCell" colspan="2"></th>
+                                        <th>Monday</th>
+                                        <th>Tuesday</th>
+                                        <th>Wednesday</th>
+                                        <th>Thursday</th>
+                                        <th>Friday</th>
+                                        <th>Saturday</th>
+                                        <th>Sunday</th>
+                                    </thead>
+                                </tr>
+                                <tr>
+                                    <th rowspan="5">Hours</th>
+                                    <th>9am - 11am</th>
+                                    <td>Beginner</td>
+                                    <td></td>
+                                    <td>Beginner</td>
+                                    <td>Intermediate</td>
+                                    <td></td>
+                                    <td>Intermediate</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>2pm - 4pm</th>
+                                    <td></td>
+                                    <td>Beginner</td>
+                                    <td></td>
+                                    <td>Intermediate</td>
+                                    <td>Beginner</td>
+                                    <td>Intermediate</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>7pm - 9pm</th>
+                                    <td>Beginner</td>
+                                    <td>Intermediate</td>
+                                    <td>Beginner</td>
+                                    <td></td>
+                                    <td>Intermediate</td>
+                                    <td></td>
+                                    <td>Social dancing</td>
+                                </tr>
+                            </table>
+                        </section>
+                        <%- include('_layouts/asideRight') -%>
+                </main>
+            </section>
+    </body>
+    <%- include('_layouts/footer') -%>

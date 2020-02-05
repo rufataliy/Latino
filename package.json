@@ -1,0 +1,27 @@
+{
+    "name": "mywebsite",
+    "version": "1.0.0",
+    "description": "My Awesome Site",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "env-cmd -f ./dev.env node index.js"
+    },
+    "author": "Davneet",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "*",
+        "connect-flash": "*",
+        "ejs": "*",
+        "express": "*",
+        "express-fileupload": "^1.1.6",
+        "express-messages": "*",
+        "express-session": "*",
+        "express-validator": "*",
+        "fs-extra": "^8.1.0",
+        "mongoose": "*"
+    },
+    "devDependencies": {
+        "env-cmd": "^10.0.1"
+    }
+}

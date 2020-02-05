@@ -1,0 +1,45 @@
+.navigation .adminNav {
+    position: relative;
+    flex-basis: 100%;
+}
+
+table {
+    width: 80%;
+    font-size: 19px;
+}
+
+table a,
+td {
+    color: #6e6a6a;
+}
+
+.msg {
+    margin: 10px;
+    text-align: center;
+    background: lightskyblue;
+    padding: 5px;
+    opacity: 1;
+    animation-name: msg;
+    animation-delay: 3s;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes msg {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0;
+    }
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
+
+input,
+textarea {
+    background: transparent;
+}

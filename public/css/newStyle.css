@@ -1,0 +1,44 @@
+textarea {
+    padding: 10px;
+}
+
+input:focus {
+    border-bottom: 2px solid darkgrey;
+}
+
+textarea:focus {
+    border-bottom: 2px solid darkgrey;
+}
+
+.input-group {
+    margin: 0;
+}
+
+button.submit,
+button.reset {
+    background: transparent;
+    margin: 0;
+}
+
+button>i {
+    font-size: 24px;
+    transition: 0.2s;
+}
+
+button:hover>i {
+    transform: scale(1.2);
+}
+
+button.submit:hover {
+    background: transparent;
+}
+
+button.reset:hover {
+    background: transparent;
+}
+
+.msg {
+    width: 50%;
+    margin: 0 auto;
+    height: 35px;
+}

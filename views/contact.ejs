@@ -1,0 +1,68 @@
+<%- include('_layouts/head') -%>
+    <link rel="stylesheet" href="/css/contact.css">
+
+    <body>
+        <%- include('_layouts/header') -%>
+            <section id="page">
+                <main class="wrapper">
+                    <%- include('_layouts/asideLeft') -%>
+                        <section class="articles">
+                            <form action="/contact" method="POST">
+                                <div class="form-box">
+                                    <div class="group">
+                                        <div class="input-group">
+                                            <label for="name">Name</label>
+                                            <input type="text" name="name">
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="email">Email</label>
+                                            <input type="text" name="email">
+                                        </div>
+                                    </div>
+                                    <div class="group flex">
+                                        <div class="input-group left">
+                                            <label for="dance">Dance</label>
+                                            <select name="dance" id="dance">
+                                                <option value="bachata">Bachata</option>
+                                                <option value="salsa">Salsa</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-group center">
+                                            <label for="days">Days</label>
+                                            <select name="days" id="days" size="8" multiple="multiple">
+                                                <option value="monday">Monday</option>
+                                                <option value="tuesday">Tuesday</option>
+                                                <option value="wednesday">Wednesday</option>
+                                                <option value="thursday">Thursday</option>
+                                                <option value="friday">Friday</option>
+                                                <option value="saturday">Saturday</option>
+                                                <option value="sunday">Sunday</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-group right">
+                                            <label for="hours">Hours</label>
+                                            <select name="hours" id="hours" multiple="multiple">
+                                                <option value="monday">9am - 11am</option>
+                                                <option value="tuesday">2pm - 4pm</option>
+                                                <option value="wednesday">7pm - 9pm</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="group">
+                                        <div class="input-group">
+                                            <label for="message">Message</label>
+                                            <textarea name="message" id="message" cols="50" rows="7"></textarea>
+                                        </div>
+                                        <div class="input-group">
+                                            <button class="submit" type="submit">Send</button>
+                                            <button class="reset" type="reset">Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </section>
+                        <%- include('_layouts/asideRight') -%>
+                </main>
+            </section>
+    </body>
+    <%- include('_layouts/footer') -%>

@@ -1,0 +1,58 @@
+<header>
+    <nav class="navigation">
+        <a href="/"><img src="/img/<%= site.logo%>" class="logo float_left" alt=""></a>
+        <ul>
+            <% if(appState.loggedIn){%>
+                <li class="nav-item">
+                    <a href="/logout" class="nav-link active">Log out</a>
+                </li>
+                <%} else {%>
+                    <li class="nav-item">
+                        <a href="/login" class="nav-link active">Log in</a>
+                    </li>
+                    <%}%>
+                        <li class="nav-item">
+                            <a href="/" class="nav-link active">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/styles/generic" class="nav-link">Styles<i class="fas fa-chevron-down"></i></a>
+                            <ul class="sub-menu">
+                                <% if(typeof links != 'undefined') {
+                                   links.forEach(link=>{
+                                    %>
+                                    <li class="nav-item">
+                                        <a href="/styles/<%= link.name%>" class="nav-link">
+                                            <%= link.name%>
+                                        </a>
+                                    </li>
+                                    <%})}%>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/classes" class="nav-link">Classes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/contact" class="nav-link">Contact</a>
+                        </li>
+        </ul>
+
+    </nav>
+    <% if(appState.loggedIn){%>
+        <div class="admin-nav">
+            <ul>
+                <li class="nav-item">
+                    <a href="/newPost" class="nav-link active">New Post</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/newStyle" class="nav-link active">New Style</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/admin" class="nav-link active">Posts</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/site" class="nav-link active">Site details</a>
+                </li>
+            </ul>
+        </div>
+        <%}%>
+</header>

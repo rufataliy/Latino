@@ -1,0 +1,46 @@
+<%- include('_layouts/head') -%>
+    <link rel="stylesheet" href="css/contact.css">
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#body'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+
+    <body>
+        <%- include('_layouts/header') -%>
+            <section id="page">
+                <main class="wrapper">
+                    <%- include('_layouts/asideLeft') -%>
+                        <section class="articles">
+                            <form action="/site" enctype="multipart/form-data" method="POST">
+                                <div class="form-box">
+                                    <div class="group">
+                                        <div class="input-group">
+                                            <label for="title">Site title</label>
+                                            <input type="text" value="<%= site.title%>" name="title">
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="footer">Footer</label>
+                                            <input type="text" value="<%= site.footer%>" name="footer">
+                                        </div>
+                                        <div class="input-group">
+                                            <label>Logo</label>
+                                            <label id='fileBtn' for="image">Image<i class="fas fa-upload"></i></label>
+                                            <input style="border:0px;" type="file" name="logo" id="image">
+                                        </div>
+                                        <div class="input-group">
+                                            <button class="submit" type="submit">Send</button>
+                                            <button class="reset" type="reset">Reset</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <script src="https://cdn.ckeditor.com/ckeditor5/15.0.0/classic/ckeditor.js"></script>
+                        </section>
+                        <%- include('_layouts/asideRight') -%>
+                </main>
+            </section>
+    </body>
+    <%- include('_layouts/footer') -%>

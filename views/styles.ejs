@@ -1,0 +1,28 @@
+<%- include('_layouts/head') -%>
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <body>
+        <%- include('_layouts/header') -%>
+            <section id="page">
+                <main class="wrapper">
+                    <%- include('_layouts/asideLeft') -%>
+                        <section class="articles">
+                            <% posts.forEach(post=>{ %>
+                                <article class="content-box">
+                                    <div class="article-content">
+                                        <div class="content-text">
+                                            <h2 class="content-title">
+                                                <%- post.title%>
+                                            </h2>
+                                            <%- post.body%>
+                                        </div>
+                                        <img src="/img/<%= post.image %>" alt="<%= post.image%>" class="content-img ">
+                                    </div>
+                                </article>
+                                <% }) %>
+                        </section>
+                        <%- include('_layouts/asideRight') -%>
+                </main>
+            </section>
+    </body>
+    <%- include('_layouts/footer') -%>
